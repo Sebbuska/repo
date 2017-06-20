@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="azazazaza_o" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,66 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="U8B-Zc-tpc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wao-Hv-OGP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ESg-0Z-hmQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdL-EE-tle">
+                                            <rect key="frame" x="162" y="252.5" width="50" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                            <state key="normal" title="Get In">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="getInButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LH8-We-7cz"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="UdL-EE-tle" firstAttribute="centerY" secondItem="ESg-0Z-hmQ" secondAttribute="centerY" constant="-64" id="I6L-AW-5pj"/>
+                                        <constraint firstItem="UdL-EE-tle" firstAttribute="centerX" secondItem="ESg-0Z-hmQ" secondAttribute="centerX" id="Sj9-1y-Rwq"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wao-Hv-OGP" secondAttribute="bottom" id="6u1-Iy-d20"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="U8B-Zc-tpc" secondAttribute="bottom" id="9Ia-bt-UBk"/>
+                            <constraint firstItem="Wao-Hv-OGP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Z69-wJ-41F"/>
+                            <constraint firstItem="Wao-Hv-OGP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ztv-i1-s7b"/>
+                            <constraint firstItem="U8B-Zc-tpc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jrh-dS-W5z"/>
+                            <constraint firstAttribute="trailing" secondItem="Wao-Hv-OGP" secondAttribute="trailing" id="kIm-9z-1nW"/>
+                            <constraint firstItem="U8B-Zc-tpc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kcE-ck-QTy"/>
+                            <constraint firstAttribute="trailing" secondItem="U8B-Zc-tpc" secondAttribute="trailing" id="lr0-JB-zTq"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="getInButton" destination="UdL-EE-tle" id="qqn-Ml-mFu"/>
+                        <segue destination="OfA-7n-h47" kind="presentation" identifier="ShowController" id="0mY-cn-Pm9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="52" y="126.38680659670166"/>
+        </scene>
+        <!--MainFlow-->
+        <scene sceneID="Zqk-16-CKd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainFlow" id="OfA-7n-h47" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ag-cL-YtQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="818" y="126"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="1353" height="1353"/>
+    </resources>
 </document>
